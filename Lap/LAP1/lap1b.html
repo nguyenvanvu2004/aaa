@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const game = {
+            team1: 'HÀ NỘI',
+            team2: 'HÀ NAM',
+
+            players: [
+                [
+                    'Hồ Tấn Tài ',
+                    'Nguyễn Tiến Linh',
+                    'Phan Văn Đức',
+                    'Nguyễn Thanh Bình',
+                    'Nguyễn Văn Quyết',
+                    'Nguyễn Thanh Nhân ',
+                    'Hồ Tấn Tài ',
+                    'Khuất Văn Khang',
+                    'Phan Văn Đức ',
+                    'Nguyễn Văn Toàn',
+                    'Nguyễn Văn Quyết ',
+
+
+                ],
+                [
+                    'Phạm Tuấn Hải ',
+                    'Nguyễn Tiến Linh',
+                    'Phạm Tuấn Hải',
+                    'Nguyễn Văn Quyết ',
+                    'Nguyễn Văn Tùng',
+                    'Đinh Xuân Tiến',
+                    'Dụng Quang Nho ',
+                    'Nguyễn Ngọc Thắng',
+                    'Nguyễn Thanh Khôi',
+                    'Vũ Tiến Long',
+                    'Trần Quang Thịnh',
+
+                ],
+            ],
+
+
+            odds: {
+                team1: 1.5,
+                draw: 3.5,
+                team2: 7.5,
+            },
+            scored: ['Hồ Tấn Tài', 'Nguyễn Văn Quyết', 'Nguyễn Tiến Linh'],
+
+
+        }
+
+        //1.
+
+        for (let i = 0; i < game.scored.length; i++) {
+            console.log(`Goal ${i + 1}: ${game.scored[i]}`);
+        }
+
+
+        //2.
+        // in gan gia tri
+        let tong = 0;
+
+        for (const key in game.odds) {
+            tong += game.odds[key];
+
+        }
+
+        console.log("Tổng tỉ lệ kết quả trận đấu:", tong);
+
+        //3.
+        for (const team in game.odds) {
+            const teamName = game[team];
+            const odds = game.odds[team];
+            const message = `Tỉ lệ thắng của ${teamName}: ${odds}`;
+            console.log(message);
+            
+
+        }
+    </script>
+</body>
+
+</html>

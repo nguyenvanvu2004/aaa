@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const restaurant = {
+            name: 'Vũ',
+            vitri: 'Nam Từ Niêm, Mỹ Đình, Hà Nội',
+            sothich: ['Chơi game', 'Nghe nhạc', 'xem phim'],
+            menu: ['cơm rang', 'trứng', 'chả', 'cá', 'thịt'],
+            menuchinh: ['cơm', 'trứng', 'cá'],
+
+            openingHours: {
+                thu:{
+                    open: 12,
+                    close: 22,
+                },
+                fri: {
+                    open: 11,
+                    close: 23,
+                },
+                sat: {
+                    open: 0,
+                    close: 24,
+                },
+            },
+
+
+            order: function (menuIndex, mainIndex) {
+        return [this.menu[menuIndex], this.menuchinh[mainIndex]];
+    },
+
+    orderDelivery: function ({ menuIndex, mainIndex, time, address }) {
+        console.log(`đơn đã nhận ${this.menu[menuIndex]} và ${this.menuchinh[mainIndex]} địa chỉ ở ${address} thời gian ${time}`);
+    },
+};
+
+restaurant.orderDelivery({
+    time: '22:30',
+    address: 'Ha noi',
+    mainIndex: 2,
+    menuIndex: 2,
+});
+
+        const{name, openingHours, sothich } = restaurant;
+        console.log(name,openingHours,sothich);
+
+        const {
+            name: restaurantName,
+            openingHours: hours,
+            sothich: tags,
+        } = restaurant;
+        console.log(restaurantName, hours, tags);
+
+        // các giá trị mặc định
+
+        const {menu1 =[], menu: starters =[] } = restaurant;
+        console.log(menu1, starters);
+
+        // các biến đột biến
+
+        let a = 111;
+        let b = 999;
+        const obj = { a: 23, b:7, c: 14};
+        ({a , b} = obj);
+        console.log(a,b);
+
+        // các đối tượng lồng nhau
+
+        const {
+            fri: {open: o, close: c},} = openingHours;
+        console.log(o,c);
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

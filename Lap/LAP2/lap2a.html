@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const events = new Map([
+
+
+            [10, 'Phạt góc cho Phạm Tuấn Hải'],
+            [23, 'Nguyễn Tiến Linh nhận thẻ vàng'],
+            [35, 'Nguyễn Văn Tùng thực hiện quả phạt đền và ghi bàn'],
+            [42, 'Hồ Tấn Tài ghi bàn mở tỉ số cho Hà Nội'],
+            [55, 'Thay người: Đinh Xuân Tiến vào sân thay cho Dụng Quang Nho'],
+            [68, 'Nguyễn Văn Quyết nhận thẻ đỏ']
+
+        ]);
+
+        //1.
+        const uniqueEvents = [...new Set(events.values())];
+        console.log(uniqueEvents);
+
+        //2.
+        events.delete(23);
+        console.log(events);
+
+        //3. 
+        console.log(
+            `Trung bình mỗi sự kiện xảy ra cứ sau ${90 /
+            events.size} phút`
+        );
+
+        const time = [...events.keys()].pop();
+        console.log(time);
+        console.log(
+            `Trung bình mỗi sự kiện xảy ra cứ sau ${time /
+            events.size} phut`
+        );
+
+        //4.
+        for (const [min, event] of events) {
+            const half = min <= 45 ? 'Đầu tiên' : 'Thứ hai';
+            console.log(`[${half} HALF] ${min}: ${event}`);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const game = {
+            team1: 'HÀ NỘI',
+            team2: 'HÀ NAM',
+
+            players: [
+            [
+                'Hồ Tấn Tài ',
+                'Nguyễn Tiến Linh',
+                'Phan Văn Đức',
+                'Nguyễn Thanh Bình',
+                'Nguyễn Văn Quyết',
+                'Nguyễn Thanh Nhân ',
+                'Hồ Tấn Tài ',
+                'Khuất Văn Khang',
+                'Phan Văn Đức ',
+                'Nguyễn Văn Toàn',
+                'Nguyễn Văn Quyết ',
+
+
+            ],
+            [
+                'Phạm Tuấn Hải ',
+                'Nguyễn Tiến Linh',
+                'Phạm Tuấn Hải',
+                'Nguyễn Văn Quyết ',
+                'Nguyễn Văn Tùng',
+                'Đinh Xuân Tiến',
+                'Dụng Quang Nho ',
+                'Nguyễn Ngọc Thắng',
+                'Nguyễn Thanh Khôi',
+                'Vũ Tiến Long',
+                'Trần Quang Thịnh',
+
+            ],
+        ],
+        
+
+        odds: {
+            team1: 1.5,
+            draw: 3.5,
+            team2: 5.5,
+        },
+        scored: ['Hồ Tấn Tài', 'Nguyễn Văn Quyết', 'Nguyễn Tiến Linh'],
+
+        
+        }
+
+        //1.
+
+        const [players1, players2] = game.players;
+        console.log ("Đọi 1", players1);
+        console.log ("Đọi 2", players2);
+
+        //2. 
+
+        const [gk, ...Players] = game.players[0];
+        console.log("Thủ môn HÀ NỘI: ", gk);
+        console.log("Cầu thủ HÀ NỘI: ", Players);
+
+        //3.
+        const allplayers = [...game.players[0], ...game.players[1]];
+        console.log(" Toàn bộ 22 cầu thủ trên sân là: " , allplayers);
+
+        //4.
+        const playersFinal = [...game.players[0], 'Phan Thanh Đức Thiện','Lê Đinh Long Vũ','Hoàng Công Hậu '];
+        console.log("Đội HÀ NỘI sau khi thêm cầu thủ thay người:",playersFinal);
+
+        //5.
+        const {team1, draw,team2} = game.odds;
+        console.log("Tỉ lệ kết quả trận đấu:");
+        console.log("Team 1:", team1);
+        console.log("Draw:", draw);
+        console.log("Team 2:", team2);
+
+        //6. 
+        const printGoals = function (...players) {
+            console.log("Danh sách cầu thủ đã ghi bàn:", players);
+            console.log(`Số lượng bàn thắng đã được ghi: ${players.length}`);
+        };
+
+        // Sử dụng hàm và truyền vào danh sách cầu thủ đã ghi bàn
+        printGoals(...game.scored);
+
+        //7. 
+        team1 < team2 && console.log(' Hà nội thắng');
+        team1 > team2 && console.log('Hà nam thắng');
+
+    </script>
+    </script>
+</body>
+</html>
